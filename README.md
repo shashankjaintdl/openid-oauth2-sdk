@@ -1,3 +1,3 @@
-# openid-oauth2-sdk
+# OPENID-CONNECT-OAUTH 2.0 -SDK
 
 SDK tool kit to develop the openid connect application on the top of OAuth 2.0 protocol.
