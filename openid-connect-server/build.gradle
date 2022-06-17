@@ -4,8 +4,12 @@ plugins{
 }
 dependencies {
 
-     api project(":openid-connect-common")
+    api project(":openid-connect-common")
+    implementation 'org.springframework:spring-web:5.3.20'
 
 
+}
 
+repositories {
+    mavenCentral()
 }

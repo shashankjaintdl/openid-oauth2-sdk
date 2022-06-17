@@ -7,4 +7,5 @@ public interface ClientRegistrationService {
     ClientInformation addNewClient(ClientInformation clientInformation);
 
 
+
 }

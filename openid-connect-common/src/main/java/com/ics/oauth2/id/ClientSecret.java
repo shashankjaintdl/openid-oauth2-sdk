@@ -72,7 +72,7 @@ public class ClientSecret implements Serializable {
     }
 
     public boolean isExpired(){
-        if (value==null){
+        if (value == null){
             return false;
         }
         final Date currentDate = new Date();

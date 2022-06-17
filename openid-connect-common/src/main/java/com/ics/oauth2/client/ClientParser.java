@@ -14,16 +14,13 @@ import static com.ics.oauth2.client.ClientDetailsParameters.*;
 
 public class ClientParser {
 
-    private ClientParser(){
-
-    }
+    private ClientParser(){}
 
     public static ClientID parseClientID(final JsonObject jsonObject) throws ParseException {
         return new ClientID(JsonUtils.getAsString(jsonObject, CLIENT_ID));
     }
 
     public static Date parseClientIDIssuedAt(final JsonObject jsonObject) throws ParseException{
-
        return  JsonUtils.getAsDate(jsonObject, CLIENT_ID_ISSUED_AT);
     }
 
