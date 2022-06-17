@@ -1,0 +1,13 @@
+app:
+  datasource:
+    main:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/openidtestdb?createDatabaseIfNotExist=true
+      username: root
+      password: 'sjain'
+      pool-size: 30
+
+server:
+  error:
+    include-binding-errors: always
+    include-message: always

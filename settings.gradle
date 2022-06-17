@@ -1,0 +1,5 @@
+rootProject.name = "openid-connect"
+include 'openid-connect-common'
+include 'openid-connect-webapp'
+include 'openid-connect-server'
+
