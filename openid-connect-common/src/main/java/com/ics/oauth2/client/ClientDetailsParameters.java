@@ -9,7 +9,7 @@ public final class ClientDetailsParameters {
     public static final String CLIENT_ID_ISSUED_AT = "client_id_issued_at";
     public static final String CLIENT_SECRET = "client_secret";
     public static final String CLIENT_SECRET_EXPIRES_AT = "client_secret_expires_at";
-    public static final String CLIENT_REGISTERED_URI = "client_register_uri";
+    public static final String CLIENT_REGISTER_URI = "client_register_uri";
     public static final String CLIENT_NAME = "client_name";
     public static final String CLIENT_TYPE = "client_type";
     public static final String REDIRECT_URIS = "redirect_uris";

@@ -20,7 +20,7 @@ public class ClientInformation {
     private static final Set<String> REGISTERED_PARAMETER_NAME;
 
     static {
-        REGISTERED_PARAMETER_NAME = Set.of(CLIENT_ID, CLIENT_ID_ISSUED_AT ,CLIENT_SECRET, CLIENT_SECRET_EXPIRES_AT, CLIENT_REGISTERED_URI);
+        REGISTERED_PARAMETER_NAME = Set.of(CLIENT_ID, CLIENT_ID_ISSUED_AT , CLIENT_SECRET, CLIENT_SECRET_EXPIRES_AT, CLIENT_REGISTER_URI);
     }
 
     private final ClientID clientID;
@@ -83,7 +83,7 @@ public class ClientInformation {
     }
 
     public ClientType applyClientType(){
-        return (metadata.getTokenEndpointAuthenticationMethod().getValue() == null &&
+        return (metadata.getTokenEndpointAuthenticationMethod() == null &&
                 metadata.getJwkSet() == null &&
                 metadata.getJwksUri() == null &&
                 clientSecret == null) ? ClientType.PUBLIC : ClientType.CONFIDENTIAL;
@@ -126,7 +126,7 @@ public class ClientInformation {
         }
 
         if (registeredUri!=null){
-            o.addProperty(CLIENT_REGISTERED_URI, registeredUri.toString());
+            o.addProperty(CLIENT_REGISTER_URI, registeredUri.toString());
         }
 
         return o;

@@ -59,7 +59,7 @@ public class ClientMetadata {
     private SoftwareVersion softwareVersion;
     private SignedJWT softwareStatement;
     private Set<String> resourceIds;
-    private Set<Scope> scope;
+    private Scope scope;
     private Set<GrantType> grantType;
     private Set<ResponseType> responseTypes;
     private JWSAlgorithm requestObjectSigningAlg;
@@ -242,11 +242,11 @@ public class ClientMetadata {
         this.resourceIds = resourceIds;
     }
 
-    public Set<Scope> getScope() {
+    public Scope getScope() {
         return scope;
     }
 
-    public void setScope(Set<Scope> scope) {
+    public void setScope(Scope scope) {
         this.scope = scope;
     }
 
@@ -357,7 +357,7 @@ public class ClientMetadata {
         c.setSoftwareStatement(JsonUtils.getAsSignedJwt(o, SOFTWARE_STATEMENT));
         c.setResourceIds(JsonUtils.getAsStringSet(o, RESOURCE_IDS));
         c.setGrantType(JsonUtils.getAsGrantTypes(o, GRANT_TYPE));
-        c.setScope(JsonUtils.getAsScope(o,SCOPE));
+        c.setScope(Scope.parse(JsonUtils.getAsStringList(o, SCOPE)));
         c.setResponseTypes(JsonUtils.getAsResponseTypes(o, RESPONSE_TYPES));
         c.setRequestObjectSigningAlg(JsonUtils.getAsJwsAlgorithm(o, REQUEST_OBJECT_SIGNING_ALG));
         c.setRequestObjectEncryptionAlg(JsonUtils.getAsJweAlgorithm(o, REQUEST_OBJECT_ENCRYPTION_ALG));
@@ -459,8 +459,8 @@ public class ClientMetadata {
 
         if (scope != null){
             JsonArray jsonArray = new JsonArray();
-            for (Scope s:scope){
-                jsonArray.add(new ArrayList<>(s).get(0).getValue());
+            for (String s:scope.toStringList()){
+                jsonArray.add(s);
             }
             o.add(SCOPE, jsonArray);
         }

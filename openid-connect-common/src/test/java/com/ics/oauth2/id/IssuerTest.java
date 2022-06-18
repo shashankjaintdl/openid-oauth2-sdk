@@ -15,12 +15,7 @@ class IssuerTest {
 
     }
 
-    @Test
-    void testIssuerWithInvalidURI() throws Exception{
-        Issuer issuer = new Issuer("https://www.examplesite.com");
 
-        assertFalse(issuer.isValid(),"Issuer URI is not valid!");
-    }
 
     @Test
     void testIssuerURIWithQueryParam() throws Exception {

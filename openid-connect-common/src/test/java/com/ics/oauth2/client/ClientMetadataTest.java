@@ -93,8 +93,8 @@ class ClientMetadataTest {
         metadata.setRequestObjectSigningAlg(JWSAlgorithm.ES512);
         metadata.setRequestObjectEncryptionEnc(EncryptionMethod.XC20P);
 
-        Set<Scope> scopes = Set.of(new Scope("read"), new Scope("write"));
-        metadata.setScope(scopes);
+        Scope scope = new Scope("read", "write");
+        metadata.setScope(scope);
 
         assertEquals(clientName, metadata.getClientName());
         assertEquals(redirectUris, metadata.getRedirectUris());

@@ -326,13 +326,13 @@ public class JsonUtils {
         return grantTypes;
     }
 
-    public static Set<Scope> getAsScope(JsonObject o, String fields) {
+    public static Scope getAsScope(JsonObject o, String fields) {
+        List<String> strings = getAsStringList(o, fields);
 
-        List<String> rts = getAsStringList(o, fields);
-        Set<Scope> scopes = new HashSet<>();
-        for (String s:rts){
-            scopes.add(Scope.parse(s));
+        if (strings.isEmpty()){
+            return new Scope();
         }
-        return scopes;
+
+        return Scope.parse(strings);
     }
 }

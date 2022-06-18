@@ -43,7 +43,7 @@ public class ClientParser {
     }
 
     public static URI parseRedirectURI(final JsonObject jsonObject) throws ParseException{
-        return JsonUtils.getAsURI(jsonObject, CLIENT_REGISTERED_URI);
+        return JsonUtils.getAsURI(jsonObject, CLIENT_REGISTER_URI);
     }
 
 

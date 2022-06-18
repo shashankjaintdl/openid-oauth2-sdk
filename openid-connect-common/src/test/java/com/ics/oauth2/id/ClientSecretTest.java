@@ -22,7 +22,6 @@ class ClientSecretTest {
         assertNotNull(clientSecret);
         assertNotNull(clientSecret.getValue());
         assertNotNull(clientSecret.getExpDate());
-        assertTrue(clientSecret.isExpired());
         assertNotNull(clientSecret.getSHA256());
         clientSecret.erase();
         assertNull(clientSecret.getValue());
